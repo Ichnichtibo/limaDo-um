@@ -1,1 +1,389 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('friend-photo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        *,
+        *::before,
+        *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        body {
+        background-color: #eac285;
+        }
+        .container {
+        width: 400px;
+        height: 400px;
+        background-color: #ffffff;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 8px;
+        box-shadow: 0 20px 45px rgba(120, 76, 10, 0.25);
+        }
+        .cake {
+        width: 100%;
+        position:relative;
+        bottom: 60px;
+
+        }
+        .bottom-layer,
+        .top-layer,
+        .middle-layer {
+        height: 80px;
+        width: 240px;
+        position: relative;
+        margin: auto;
+        background-repeat: repeat;
+        background-size: 100% 100%, 60px 100px;
+        background-position: 28px 0;
+        background-image: linear-gradient(
+            transparent 50px,
+            #e3a953 50px,
+            #e3a953 60px,
+            transparent 60px
+            ),
+            radial-gradient(circle at 30px 5px, #713e16 30px, #eac284 31px);
+        }
+        .middle-layer {
+        transform: scale(0.85);
+        top: 72px;
+        animation: rise-1 2s forwards;
+        }
+        @keyframes rise-1 {
+        100% {
+            top: 7px;
+        }
+        }
+        .top-layer {
+        transform: scale(0.7);
+        top: 144px;
+        animation: rise-2 2s 2s forwards;
+        }
+        @keyframes rise-2 {
+        100% {
+            top: 26px;
+        }
+        }
+        
+
+        .candle {
+        background: repeating-linear-gradient(
+            45deg,
+            #fd3018 0,
+            #fd3018 5px,
+            #ffa89e 5px,
+            #ffa89e 10px
+        );
+        height: 45px;
+        width: 15px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        animation: rise-3 1s 4s forwards;
+        }
+        @keyframes rise-3 {
+        100% {
+            bottom: 202px;
+        }
+        }
+        .candle:after {
+        content: "";
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        background-color: #ffee54;
+        border-radius: 0 50% 50% 50%;
+        transform: scale(0) rotate(45deg);
+        bottom: 50px;
+        left: -0.5px;
+        animation: flame 1.5s 5s forwards;
+        }
+        @keyframes flame {
+        100% {
+            transform: scale(1) rotate(45deg);
+        }
+        }
+        .flame {
+            width: 8px;
+            height: 15px;
+            background-color: orange;
+            position: absolute;
+            top: -15px;
+            left: 1px;
+            border-radius: 50%;
+            animation: flicker 0.5s alternate infinite;
+        }
+        
+
+
+        @keyframes flicker {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        #al {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background-color: red;
+            border-radius: 50% 50% 45% 45%;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), inset 0 -10px 10px rgba(255, 255, 255, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .balloon:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 2px;
+            height: 40px;
+            background-color: gray;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f39c12;
+            border-radius: 50%;
+            animation: fall 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(30px, -20px);
+            }
+            50% {
+                transform: translate(-20px, -40px);
+            }
+            75% {
+                transform: translate(20px, -60px);
+            }
+            100% {
+                transform: translate(-10px, -80px);
+            }
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(500px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hidden {
+            display: none;
+        }
+        .ust_yazi{
+            position: absolute;
+            top: 10px;
+            left: calc(50% - 280px);
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .alt_yazi{
+            position: absolute;
+            bottom: 150px;
+            left: calc(50% - 250px);
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 1em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);    
+        }
+        .Kolaj {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative; /* To position the text in the center */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.Kolaj .foto-1, .Kolaj .foto-2, .Kolaj .foto-3, .Kolaj .foto-4 {
+    width: 48%;
+    position: relative;
+    padding-top: 48%; 
+    overflow: hidden;
+}
+
+.Kolaj img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.birthday-text {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #FF6347; /* A warm and bright color */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow to make the text pop */
+    padding: 20px 0;
+    margin-top: 20px;
+    letter-spacing: 2px; /* Add some spacing between letters for better readability */
+    text-transform: uppercase; /* Makes the text all uppercase */
+}   
+</style>
+</head>
+<body>
+
+    <div class="cake-container", id="cake-container">
+        <div class="ust_yazi"><h1>MUMU ÜFLE</h1></div>
+
+        <div class="cake">
+          <div class="candle"></div>
+          <div class="top-layer"></div>
+          <div class="middle-layer"></div>
+          <div class="bottom-layer"></div>
+          
+        </div>
+       
+        </div>
+    </div>
+
+    <div class="Kolaj" id="Kolaj" style="display: none;">
+        <div class="row">
+            <div class="foto-1">
+                <img src="foto1.jpg" alt="">
+            </div>
+            <div class="foto-2">
+                <img src="foto2.jpg" alt="">
+            </div>
+        </div>
+        <h1 class="birthday-text">LİMA DOĞUM GÜNÜN KUTLU OLSUN</h1>
+        <div class="row">
+            <div class="foto-3">
+                <img src="foto3.jpg" alt="">
+            </div>
+            <div class="foto-4">
+                <img src="foto4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cakeContainer = document.getElementById('cake-container');
+        const Kolaj = document.getElementById('Kolaj');
+        function startCelebration() {
+            cakeContainer.classList.add('hidden');
+            Kolaj.style.display = 'block';
+            // Balloon effect
+            function createBalloon() {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+                document.body.appendChild(balloon);
+
+                const randomColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                const randomLeft = Math.random() * window.innerWidth + 'px';
+                const randomTop = (Math.random() * (window.innerHeight / 1.5)) + 'px';
+                const randomSize = Math.random() * 20 + 80 + 'px';
+
+                balloon.style.backgroundColor = randomColor;
+                balloon.style.left = randomLeft;
+                balloon.style.top = randomTop;
+                balloon.style.width = randomSize;
+                balloon.style.height = parseInt(randomSize) * 1.5 + 'px';
+
+                const animationDuration = Math.random() * 10 + 10 + 's';
+                balloon.style.animation = `float ${animationDuration} ease-in-out infinite`;
+
+                setTimeout(() => {
+                    balloon.remove();
+                }, parseFloat(animationDuration) * 1000);
+            }
+
+            setInterval(createBalloon, 500);
+
+            // Confetti effect
+            function createConfetti() {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                document.body.appendChild(confetti);
+
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+
+                confetti.classList.add('confetti');
+                document.body.appendChild(confetti);
+
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+
+            setInterval(createConfetti, 50);
+        }
+
+        cakeContainer.addEventListener('click', startCelebration);
+    </script>
+</body>
+</html>
